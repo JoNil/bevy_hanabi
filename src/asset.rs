@@ -1,13 +1,11 @@
 use std::ops::Deref;
 
-use bevy::{
-    asset::Asset,
-    reflect::Reflect,
-    utils::{default, HashSet},
-};
+use bevy_asset::Asset;
+use bevy_reflect::Reflect;
+use bevy_utils::{default, HashSet};
 
 #[cfg(feature = "serde")]
-use bevy::asset::{io::Reader, AssetLoader, AsyncReadExt, LoadContext};
+use bevy_asset::{io::Reader, AssetLoader, AsyncReadExt, LoadContext};
 #[cfg(feature = "serde")]
 use thiserror::Error;
 

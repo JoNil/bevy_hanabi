@@ -2,7 +2,9 @@
 
 use std::hash::Hash;
 
-use bevy::prelude::*;
+use bevy_math::prelude::*;
+use bevy_reflect::prelude::*;
+use bevy_utils::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{

@@ -1,6 +1,6 @@
 //! Renders particles as ribbons.
 
-use bevy::prelude::*;
+use bevy_reflect::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{

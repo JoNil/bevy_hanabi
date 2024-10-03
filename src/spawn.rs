@@ -1,6 +1,12 @@
 use std::hash::{Hash, Hasher};
 
-use bevy::{ecs::system::Resource, math::FloatOrd, prelude::*, reflect::Reflect};
+use bevy_asset::prelude::*;
+use bevy_ecs::{prelude::*, system::Resource};
+use bevy_log::prelude::*;
+use bevy_math::{prelude::*, FloatOrd};
+use bevy_reflect::{prelude::*, Reflect};
+use bevy_render::prelude::*;
+use bevy_time::prelude::*;
 use rand::{
     distributions::{uniform::SampleUniform, Distribution, Uniform},
     SeedableRng,
@@ -678,6 +684,7 @@ mod test {
             },
             AssetServerMode,
         },
+        prelude::*,
         render::view::{VisibilityPlugin, VisibilitySystems},
         tasks::{IoTaskPool, TaskPoolBuilder},
     };

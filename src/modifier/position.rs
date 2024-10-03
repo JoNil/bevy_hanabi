@@ -4,7 +4,7 @@
 //! useful to initialize the position at spawn time, but can occasionally be
 //! used during simulation update to enforce a particular position.
 
-use bevy::prelude::*;
+use bevy_reflect::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{

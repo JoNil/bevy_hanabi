@@ -94,12 +94,11 @@
 
 use std::num::NonZeroU64;
 
-use bevy::{
-    ecs::{component::Component, reflect::ReflectComponent, world::Mut},
-    log::trace,
-    reflect::Reflect,
-    utils::HashSet,
-};
+use bevy_ecs::{component::Component, reflect::ReflectComponent, world::Mut};
+use bevy_log::trace;
+use bevy_reflect::Reflect;
+use bevy_utils::HashSet;
+
 use serde::{Deserialize, Serialize};
 
 use crate::{graph::Value, next_multiple_of, ToWgslString, ValueType};

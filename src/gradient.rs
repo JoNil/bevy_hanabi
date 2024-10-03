@@ -1,9 +1,8 @@
 use std::hash::{Hash, Hasher};
 
-use bevy::{
-    math::{FloatOrd, Quat, Vec2, Vec3, Vec3A, Vec4},
-    reflect::{FromReflect, Reflect},
-};
+use bevy_math::{FloatOrd, Quat, Vec2, Vec3, Vec3A, Vec4};
+use bevy_reflect::{FromReflect, Reflect};
+
 use serde::{Deserialize, Serialize};
 
 /// Describes a type that can be linearly interpolated between two keys.

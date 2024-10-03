@@ -25,13 +25,11 @@ use std::{
     hash::{Hash, Hasher},
 };
 
-use bevy::{
-    asset::Handle,
-    math::{UVec2, Vec2, Vec4},
-    reflect::Reflect,
-    render::texture::Image,
-    utils::HashMap,
-};
+use bevy_asset::Handle;
+use bevy_math::{UVec2, Vec2, Vec4};
+use bevy_reflect::Reflect;
+use bevy_render::texture::Image;
+use bevy_utils::HashMap;
 use bitflags::bitflags;
 use serde::{Deserialize, Serialize};
 

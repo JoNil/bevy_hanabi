@@ -104,7 +104,8 @@
 
 use std::{cell::RefCell, num::NonZeroU32, rc::Rc};
 
-use bevy::{prelude::default, reflect::Reflect};
+use bevy_reflect::Reflect;
+use bevy_utils::prelude::default;
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
 

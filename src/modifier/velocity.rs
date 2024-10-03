@@ -9,7 +9,7 @@
 //! particle.position += particle.velocity * simulation.delta_time;
 //! ```
 
-use bevy::prelude::*;
+use bevy_reflect::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{

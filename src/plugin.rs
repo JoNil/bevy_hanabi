@@ -1,19 +1,23 @@
 #[cfg(feature = "2d")]
-use bevy::core_pipeline::core_2d::Transparent2d;
+use bevy_core_pipeline::core_2d::Transparent2d;
 #[cfg(feature = "3d")]
-use bevy::core_pipeline::core_3d::{AlphaMask3d, Transparent3d};
-use bevy::{
+use bevy_core_pipeline::core_3d::{AlphaMask3d, Transparent3d};
+
+use bevy_app::prelude::*;
+use bevy_asset::prelude::*;
+use bevy_ecs::prelude::*;
+use bevy_log::prelude::*;
+use bevy_render::{
     prelude::*,
-    render::{
-        render_graph::RenderGraph,
-        render_phase::DrawFunctions,
-        render_resource::{SpecializedComputePipelines, SpecializedRenderPipelines},
-        renderer::{RenderAdapterInfo, RenderDevice},
-        view::{check_visibility, prepare_view_uniforms, visibility::VisibilitySystems},
-        Render, RenderApp, RenderSet,
-    },
-    time::{time_system, TimeSystem},
+    render_graph::RenderGraph,
+    render_phase::DrawFunctions,
+    render_resource::{SpecializedComputePipelines, SpecializedRenderPipelines},
+    renderer::{RenderAdapterInfo, RenderDevice},
+    view::{check_visibility, prepare_view_uniforms, visibility::VisibilitySystems},
+    Render, RenderApp, RenderSet,
 };
+use bevy_time::prelude::*;
+use bevy_time::{time_system, TimeSystem};
 
 use crate::{
     asset::EffectAsset,
@@ -92,7 +96,7 @@ pub enum EffectSystems {
 
 pub mod main_graph {
     pub mod node {
-        use bevy::render::render_graph::RenderLabel;
+        use bevy_render::render_graph::RenderLabel;
 
         /// Label for the simulation driver node running the simulation graph.
         #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, RenderLabel)]
@@ -101,14 +105,14 @@ pub mod main_graph {
 }
 
 pub mod simulate_graph {
-    use bevy::render::render_graph::RenderSubGraph;
+    use bevy_render::render_graph::RenderSubGraph;
 
     /// Name of the simulation sub-graph.
     #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, RenderSubGraph)]
     pub struct HanabiSimulateGraph;
 
     pub mod node {
-        use bevy::render::render_graph::RenderLabel;
+        use bevy_render::render_graph::RenderLabel;
 
         /// Label for the simulation node (init and update compute passes;
         /// view-independent).
@@ -196,7 +200,7 @@ impl Plugin for HanabiPlugin {
             )
             .configure_sets(
                 PreUpdate,
-                EffectSystems::UpdatePropertiesFromAsset.after(bevy::asset::TrackAssets),
+                EffectSystems::UpdatePropertiesFromAsset.after(bevy_asset::TrackAssets),
             )
             .add_systems(
                 First,
@@ -357,7 +361,7 @@ impl Plugin for HanabiPlugin {
         graph.add_node(main_graph::node::HanabiDriverNode, VfxSimulateDriverNode {});
         graph.add_node_edge(
             main_graph::node::HanabiDriverNode,
-            bevy::render::graph::CameraDriverLabel,
+            bevy_render::graph::CameraDriverLabel,
         );
     }
 }

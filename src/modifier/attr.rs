@@ -5,7 +5,7 @@
 //! per-particle diversity / randomness, as attributes are the only quantities
 //! stored per particle.
 
-use bevy::prelude::*;
+use bevy_reflect::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{

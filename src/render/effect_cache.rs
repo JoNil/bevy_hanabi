@@ -5,13 +5,12 @@ use std::{
     sync::atomic::{AtomicU64, Ordering as AtomicOrdering},
 };
 
-use bevy::{
-    asset::Handle,
-    ecs::system::Resource,
-    log::{trace, warn},
-    render::{render_resource::*, renderer::RenderDevice},
-    utils::HashMap,
-};
+use bevy_asset::Handle;
+use bevy_ecs::system::Resource;
+use bevy_log::{trace, warn};
+use bevy_render::{render_resource::*, renderer::RenderDevice};
+use bevy_utils::HashMap;
+
 use bytemuck::cast_slice_mut;
 
 use super::buffer_table::BufferTableId;

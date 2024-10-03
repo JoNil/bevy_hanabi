@@ -41,13 +41,12 @@
 
 use std::fmt::Debug;
 
-use bevy::{
-    math::{
-        BVec2, BVec3, BVec4, FloatOrd, IVec2, IVec3, IVec4, Mat2, Mat3, Mat4, UVec2, UVec3, UVec4,
-        Vec2, Vec3, Vec3A, Vec4,
-    },
-    reflect::Reflect,
+use bevy_math::{
+    BVec2, BVec3, BVec4, FloatOrd, IVec2, IVec3, IVec4, Mat2, Mat3, Mat4, UVec2, UVec3, UVec4,
+    Vec2, Vec3, Vec3A, Vec4,
 };
+use bevy_reflect::Reflect;
+
 use serde::{Deserialize, Serialize};
 
 use crate::{MatrixType, ScalarType, ToWgslString, ValueType, VectorType};

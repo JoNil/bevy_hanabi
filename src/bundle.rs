@@ -1,4 +1,7 @@
-use bevy::prelude::*;
+use bevy_asset::prelude::*;
+use bevy_ecs::prelude::*;
+use bevy_render::prelude::*;
+use bevy_transform::prelude::*;
 
 use crate::{CompiledParticleEffect, EffectAsset, EffectProperties, ParticleEffect};
 

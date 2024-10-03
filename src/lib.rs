@@ -166,9 +166,15 @@
 
 use std::fmt::Write as _;
 
+use bevy_asset::prelude::*;
+use bevy_ecs::prelude::*;
+use bevy_log::prelude::*;
+use bevy_math::prelude::*;
 #[cfg(feature = "2d")]
-use bevy::math::FloatOrd;
-use bevy::{prelude::*, utils::HashSet};
+use bevy_math::FloatOrd;
+use bevy_reflect::prelude::*;
+use bevy_render::prelude::*;
+use bevy_utils::{prelude::*, HashSet};
 use serde::{Deserialize, Serialize};
 use thiserror::Error;
 

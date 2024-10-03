@@ -1,10 +1,13 @@
 use std::ops::{Index, Range};
 
+use bevy_asset::prelude::*;
+use bevy_ecs::prelude::*;
+use bevy_math::prelude::*;
 #[cfg(feature = "2d")]
-use bevy::math::FloatOrd;
-use bevy::{
+use bevy_math::FloatOrd;
+use bevy_render::{
     prelude::*,
-    render::render_resource::{Buffer, CachedComputePipelineId},
+    render_resource::{Buffer, CachedComputePipelineId},
 };
 
 use super::{

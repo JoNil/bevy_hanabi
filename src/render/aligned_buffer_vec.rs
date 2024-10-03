@@ -1,14 +1,13 @@
 use std::num::NonZeroU64;
 
-use bevy::{
-    log::trace,
-    render::{
-        render_resource::{
-            Buffer, BufferAddress, BufferDescriptor, BufferUsages, ShaderSize, ShaderType,
-        },
-        renderer::{RenderDevice, RenderQueue},
+use bevy_log::trace;
+use bevy_render::{
+    render_resource::{
+        Buffer, BufferAddress, BufferDescriptor, BufferUsages, ShaderSize, ShaderType,
     },
+    renderer::{RenderDevice, RenderQueue},
 };
+
 use bytemuck::{cast_slice, Pod};
 use copyless::VecHelper;
 

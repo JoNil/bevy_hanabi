@@ -5,7 +5,7 @@
 
 use std::hash::Hash;
 
-use bevy::prelude::*;
+use bevy_reflect::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{

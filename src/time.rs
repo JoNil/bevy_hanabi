@@ -1,4 +1,6 @@
-use bevy::prelude::*;
+use bevy_ecs::prelude::*;
+use bevy_reflect::prelude::*;
+use bevy_time::prelude::*;
 
 /// The effect simulation clock.
 ///
@@ -185,6 +187,7 @@ pub(crate) fn effect_simulation_time_system(
 mod tests {
     use std::{thread::sleep, time::Duration};
 
+    use bevy::prelude::*;
     use bevy::time::{time_system, TimePlugin, TimeSystem};
 
     use super::*;

@@ -3,7 +3,7 @@
 //! These modifiers control the despawning (killing) of particles meeting
 //! specific conditions, like entering or leaving an area in space.
 
-use bevy::prelude::*;
+use bevy_reflect::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{
